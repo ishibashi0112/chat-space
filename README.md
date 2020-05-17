@@ -32,7 +32,6 @@ Usersテーブル
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false,|
-|group_id|intger|null: false, foreign_key: true|
 
   Association
 -has_many :messages
