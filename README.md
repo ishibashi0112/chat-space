@@ -36,27 +36,28 @@ Usersテーブル
 
   Association
 -has_many :messages
+ has_many :groups
 -has_many :groups, through: :users_groups
 
 
 Groupsテーブル
 |column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
-|user_id|intger|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
 
  Association
 -has_many :messages
+ has_many :users
 -has_many :users, through: :users_groups
 
 
 messagesテーブル
 |column|Type|Options|
 |------|----|-------|
-|body|string|null: false|
+|body|string|   |
 |image|string|   |
-|user_id|intger|null: false, foreign_key: true|
-|group_id|intger|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
   Association
 -belongs_to :group
@@ -66,8 +67,8 @@ messagesテーブル
 user_groupテーブル
 |column|Type|Options|
 |------|----|-------|
-|user_id|intger|null: false, foreign_key: true|
-|group_id|intger|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
    Association
 -belongs_to :group
