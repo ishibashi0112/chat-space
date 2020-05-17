@@ -36,7 +36,7 @@ Usersテーブル
 
   Association
 -has_many :messages
--has_many :users_groups
+-has_many :groups, through: :users_groups
 
 
 Groupsテーブル
@@ -47,14 +47,14 @@ Groupsテーブル
 
  Association
 -has_many :messages
--has_many :users_groups
+-has_many :users, through: :users_groups
 
 
 messagesテーブル
 |column|Type|Options|
 |------|----|-------|
 |body|string|null: false|
-|image|string||
+|image|string|   |
 |user_id|intger|null: false, foreign_key: true|
 |group_id|intger|null: false, foreign_key: true|
 
