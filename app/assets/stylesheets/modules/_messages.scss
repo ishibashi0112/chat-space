@@ -1,0 +1,169 @@
+*{
+  box-sizing: border-box;
+}
+
+$mainWhiteColor: #ffffff;
+$mainChatTextColor: #333333;
+$btnBlueColor:#38aef0;
+
+
+.sideBar{
+  height: 100vh;
+  width: 300px;
+  float: left;
+  .sideBar__userName{
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    .sideBar__userName--topItem{
+      height: 20px;
+      width: 260px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+      color: $mainWhiteColor;
+      .topItem--name{
+        font-size: 16px;
+      }
+      .topItem--icon{
+        width: 60px;
+        text-align: right;
+        .btn{
+          color: $mainWhiteColor;
+          text-decoration: none;
+          padding-left: 5px;
+        }
+        
+      }
+    }
+  }
+  .sideBar__groupList{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    .sideBar__groupList--block{
+      height: 91px;
+      width: 260px;
+      color: #fafafa;
+      margin: 0 auto;
+    }
+    .groupList--name{
+      height: 40px;
+      font-size: 15px;
+      line-height: 15px;
+      padding: 20px 0 5px 0;
+      
+    }
+    .groupList--message{
+      height: 51px;
+      font-size: 11px;
+      line-height: 11px;
+    }
+  }
+}
+
+.chatMain{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: right;
+  .chatMain__groupInfo{
+    height: 100px;
+    background-color: $mainWhiteColor;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    .chatMain__groupInfo--left{
+      padding: 35px 0 15px 40px;
+      color: #333333;
+      font-size: 20px;
+      .member-name{
+        color: #999999;
+        font-size: 12px;
+        padding-top: 15px;
+      }
+    }
+    .chatMain__groupInfo--right{
+      width: 112px;
+      padding: 28px 40px 0 20px;
+      .edit-btn{
+        display: block;
+        height: 40px;
+        width: 72px;
+        font-size: 10px;
+        background-color: $mainWhiteColor;
+        border: solid $btnBlueColor 1px;
+        color: $btnBlueColor;
+        text-decoration: none;
+        line-height: 40px;
+        text-align: center;
+
+      }
+    }
+    
+  }
+  .chatMain__messageList{
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    .chatMain__messageList--block{
+      padding: 35px 0 0 40px;
+      .messageInfo{
+        display: flex;
+        height: 16px;
+        .messageInfo--userName{
+          line-height: 16px;
+          color: #333333;
+          font-size: 16px;
+        }
+        .messageInfo--createdAt{
+          line-height: 16px;
+          color: #999999;
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+      .messageText{
+        padding: 12px 0 46px 0;
+        color: #434A54;
+        font-size: 14px;
+      }      
+    }
+  }
+  .chatMain__messageForm{
+    height: 90px;
+    background-color: #d2d2d2;
+    position: relative;
+    .messageForm--inputBox{
+      height: 90px;
+      padding: 20px 40px;
+      display: flex;
+      .inputBox--text{
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+      }
+      .inputBox--imgAttachmentBtn{
+        height: 50px;
+        margin-right: 10px;
+        font-size: 1.3rem;
+        position: absolute;
+        right: 145px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+        .fileOpen{
+          display: none;
+        }
+      }
+      .inputBox--submitBtn{
+        width: 100px;
+        margin-left: 15px;
+        background-color: $btnBlueColor;
+        color: $mainWhiteColor;
+        cursor: pointer;
+      }
+    }
+   
+  }
+}
