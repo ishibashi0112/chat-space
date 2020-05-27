@@ -1,0 +1,24 @@
+.chatMain
+  .chatMain__groupInfo
+    .chatMain__groupInfo--left
+      TEST
+      .member-name
+        Member : name
+    .chatMain__groupInfo--right
+      = link_to "#", class:"edit-btn" do
+        Edit
+        
+  .chatMain__messageList
+    .chatMain__messageList--block
+      .messageInfo
+        .messageInfo--userName  aaaa
+        .messageInfo--createdAt 2020/5/26
+      .messageText おはよう
+
+  .chatMain__messageForm
+    %form{class:"messageForm--inputBox"}
+      %input{type: "text",class:"inputBox--text", placeholder: "type a message"}
+      %label{class: "inputBox--imgAttachmentBtn"}
+        = icon('fas','image')
+        %input{type:"file" ,class: "fileOpen"}
+      %input{type: "submit", class: "inputBox--submitBtn", value:"Send"}
