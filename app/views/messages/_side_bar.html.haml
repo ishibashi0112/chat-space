@@ -4,7 +4,7 @@
       .topItem--name
         =current_user.nicname
       .topItem--icon
-        =link_to "#", class: "btn new-group_btn" do
+        =link_to new_group_path, class: "btn new-group_btn" do
           =icon('far', 'edit')
         =link_to edit_user_path(current_user), class: "btn edit-account_btn" do
           =icon("fa", "cog")
