@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nicname, presence: true, uniqueness: true
+  has_many :group_users
+  has_many :groups, through: :user_groups
 end
