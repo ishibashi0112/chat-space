@@ -37,12 +37,17 @@
       width: 260px;
       color: #fafafa;
       margin: 0 auto;
+      a{
+        text-decoration: none;
+        color: $mainWhiteColor;
+      }
     }
     .groupList--name{
       height: 40px;
       font-size: 15px;
       line-height: 15px;
       padding: 20px 0 5px 0;
+
     }
     .groupList--message{
       height: 51px;
