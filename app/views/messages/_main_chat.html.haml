@@ -1,24 +1,23 @@
 .chatMain
   .chatMain__groupInfo
     .chatMain__groupInfo--left
-      TEST
+      = @group.name
       .member-name
-        Member : name
+        Member:
+        - @group.users.each do |user|
+          = user.nicname
     .chatMain__groupInfo--right
-      = link_to "#", class:"edit-btn" do
+      = link_to edit_group_path(@group), class:"edit-btn" do
         Edit
         
   .chatMain__messageList
-    .chatMain__messageList--block
-      .messageInfo
-        .messageInfo--userName  aaaa
-        .messageInfo--createdAt 2020/5/26
-      .messageText おはよう
+    = render @messages
+        
 
   .chatMain__messageForm
-    %form{class:"messageForm--inputBox"}
-      %input{type: "text",class:"inputBox--text", placeholder: "type a message"}
-      %label{class: "inputBox--imgAttachmentBtn"}
-        = icon('fas','image')
-        %input{type:"file" ,class: "fileOpen"}
-      %input{type: "submit", class: "inputBox--submitBtn", value:"Send"}
+    = form_for [@group, @message] ,html: { class: "messageForm--inputBox" }do |f|
+      = f.text_field :body, class: 'inputBox--text', placeholder: 'type a message'
+      = f.label :image, class: 'inputBox--imgAttachmentBtn' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'fileOpen'
+      = f.submit 'Send', class: 'inputBox--submitBtn'
